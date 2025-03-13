@@ -13,10 +13,8 @@
 
 
 // ** FUNCIONALIDADES **
-// 1. Agregar nombres
-//Declaro una variable de tipo array, que almacenará los nombres de los amigos ingresados.
 
-let friends = [];
+// 1. Agregar amigos
 
 // Tareas específicas:
 // Agregar nombres: Crear una función addFriend() que se ejecute al hacer clic en el botón "Adicionar".
@@ -24,6 +22,8 @@ let friends = [];
 // Actualizar el array de amigos: Si el valor es válido, añadirlo al arreglo que almacena los nombre de amigos usando el método.push().
 // Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
 // Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
+
+let friends = []; // Array para almacenar los nombres de los amigos
 
 function addFriend() {
     let input = document.getElementById("amigo");    // Capturar el input
@@ -37,7 +37,36 @@ function addFriend() {
         friends.push(friend);                       // Agregar el nombre al array
         console.log("amigos", friends);
         input.value = "";                           // Limpiar el campo de entrada
+        showList();                                 // Actualizar la lista de amigos
     }
+}
+
+function showList() {
+    let list = document.getElementById("listaAmigos"); // Capturar la lista
+    list.innerHTML = "";                                // Limpiar la lista
+
+    friends.forEach((friend) => {                       // Recorrer el array de amigos
+        let item = document.createElement("li");         // Crear un elemento <li>
+        item.textContent = friend;                       // Asignar el nombre como contenido
+        list.appendChild(item);                          // Agregar el elemento a la lista
+    });
+}
+
+// 2. Sortear amigo
+
+// Tareas específicas:
+
+// Sortear amigo: Crear una función que se ejecute al hacer clic en el botón "Sortear Amigo".
+// Seleccionar un amigo aleatorio: Utilizar Math.random() para generar un número aleatorio y Math.floor() para redondearlo.
+// Mostrar el amigo seleccionado: Mostrar el nombre del amigo seleccionado en la página.
+// Capturar el botón "Sortear Amigo": Utilizar document.getElementById o document.querySelector para obtener el botón.
+// Asignar la función al evento click: Utilizar el método addEventListener para asignar la función al evento click del botón.
+
+function chosenFriend() {
+    let randomIndex = Math.floor(Math.random() * friends.length); // Generar un índice aleatorio
+    let chosenFriend = friends[randomIndex];                      // Obtener el amigo correspondiente
+    let result = document.getElementById("resultado");            // Capturar el elemento de resultado
+    result.textContent = chosenFriend;                            // Mostrar el amigo seleccionado
 }
 
 
