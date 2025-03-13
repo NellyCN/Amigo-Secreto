@@ -18,10 +18,6 @@
 
 let friends = [];
 
-// 2. Validar entrada
-//Para validar que el campo de texto no esté vacío, puedes utilizar la propiedad length del string ingresado. Ejemplo:
-
-
 // Tareas específicas:
 // Agregar nombres: Crear una función addFriend() que se ejecute al hacer clic en el botón "Adicionar".
 // Validar la entrada: Implementar una validación para asegurarse de que el campo no esté vacío. Si está vacío, mostrar un alert con un mensaje de error: "Por favor, inserte un nombre."
@@ -38,9 +34,6 @@ function addFriend() {
                 alert("Por favor, inserte un nombre válido.");
         return;
     } else {
-
-        // Actualizar el array de amigos: Si el valor es válido, añadirlo al arreglo que almacena los nombre de amigos usando el método.push().
-        
         friends.push(friend);                       // Agregar el nombre al array
         console.log("amigos", friends);
         input.value = "";                           // Limpiar el campo de entrada
@@ -48,18 +41,3 @@ function addFriend() {
 }
 
 
-// Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
-
-
-
-
-
-
-// Validar la entrada: Implementar una validación para asegurarse de que el campo no esté vacío. Si está vacío, mostrar un alert con un mensaje de error: "Por favor, inserte un nombre."
-
-
-
-
-// Actualizar el array de amigos: Si el valor es válido, añadirlo al arreglo que almacena los nombre de amigos usando el método.push().
-
-// Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
