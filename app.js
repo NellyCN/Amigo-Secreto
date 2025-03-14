@@ -7,35 +7,70 @@ const clickSound = new Audio("sounds/mouse-click.mp3");
 
 // Función para mostrar mensajes de error
 
+// Función para validar que solo se ingresen letras y espacios
+function isValidName(name) {
+    const regex = /^[A-Za-z\s]+$/; // Solo letras y espacios
+    return regex.test(name);     
+}
+
+// Función para mostrar mensajes de error
 function showError(message) {
   const error = document.getElementById("error"); // Capturar el elemento de error en el DOM
-  error.textContent = message; // Asignar el mensaje de error
-    error.style.display("block"); // Mostrar el mensaje
+  if (error) {
+    error.textContent = message; // Asignar el mensaje de error
+    error.style.display = "block"; // Mostrar el mensaje
+    
     setTimeout(() => {
-        error.style.display("none"); // Ocultar el mensaje después de 3 segundos
+        error.style.display = "none"; // Ocultar el mensaje después de 3 segundos
     }, 3000); // Tiempo de espera = 3000(ms)
+  } else {
+    console.error("El div de mensajes de error no fue encontrado."); // Mostrar una alerta si no se encuentra el elemento
+  }
 }
 
-// Función para validar un nombre
+// Función para validar que el nombre no esté vacío o repetido
 function isNameValid(name) {
-    return name.trim() !== "" && !friends.includes(name);   
+    return name.trim() !== "" && !friends.includes(name);
 }
-
 // 1. Agregar amigos
 
 function addFriend() {
   let input = document.getElementById("amigo"); // Capturar el input
   let friend = input.value.trim(); // Obtener el valor y eliminar espacios extra
 
-  if (!isNameValid(friend)) {
-    showError("Por favor, inserte un nombre válido o que no esté repetido.");
+  // Validar que el nombre solo contenga letras y espacios
+
+  if (!isValidName(friend)) {
+    showError("Por favor, ingresa sólo letras y espacios.");
     return;
   } 
-    friends.push(friend); // Agregar el nombre al array
-    input.value = ""; // Limpiar el campo de entrada
-    showList(); // Actualizar la lista de amigos
-    clickSound.play(); // Reproducir sonido de clic
+
+  // Convertir el nombre a mayúsculas
+  friend = friend.toUpperCase();
+
+  // Validar que el nombre no esté vacío o repetido
+  if (!isNameValid(friend)) {
+    showError("Por favor, ingresa un nombre válido o que no esté repetido.");
+  return;
 }
+
+  // Agregar el nombre a la lista
+  friends.push(friend); // Agregar el nombre al array
+  input.value = ""; // Limpiar el campo de entrada
+  showList(); // Actualizar la lista de amigos
+  clickSound.play(); // Reproducir sonido de clic
+}
+
+// Validación en tiempo real
+document.getElementById("amigo").addEventListener("input", (event) => {
+    const input = event.target;
+    const value = input.value;
+
+    // Validar que solo se ingresen letras y espacios
+    if (!isValidName(value)) {
+        input.value = value.replace(/[^A-Za-z\s]/g, ""); // Eliminar caracteres no válidos
+    }
+});
 
 // Función para crear el botón de eliminar
 function createDeleteButton(friend, item) {

@@ -22,10 +22,10 @@
         <section class="input-section">
             <h2 class="section-title">Digite el nombre de sus amigos</h2>
             <div class="input-wrapper">
-                <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
+                <input type="text" id="amigo" class="input-name" placeholder="Ingresa el nombre de un amigo">
                 <button class="button-add" onclick="addFriend()">Añadir</button>
-            </div>
-           
+                <div id="error" style="display: none; color: red;"></div>
+            </div>           
             <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
             <ul id="resultado" class="result-list" aria-live="polite"></ul>
 
