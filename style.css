@@ -1,9 +1,9 @@
 :root {
     --color-primary: #089bc4;
     --color-secondary: #FFF9EB;
-    --color-tertiary: #fad5c7;
+    --color-tertiary: hsl(46, 94%, 52%);
     --color-button: #fe652b;
-    --color-button-hover: #e55720;
+    --color-button-hover: #d14914;
     --color-text: #121111;
     --color-white: #FFFFFF;
 }
@@ -29,8 +29,7 @@ body {
     flex-direction: column;
     height: 100%;
     width: 100%;
-    /* max-width: 1200px;
-    margin: 0 auto; */
+    margin-bottom: 80px;
 }
 
 /* Banner */
@@ -119,23 +118,28 @@ button {
     border: 2px solid #000;
     border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     transform: scale(1.05);
 }
 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .button-add {
     background-color: var(--color-tertiary);
-    color: var(--color-text);
+    color: var(--color-white);
     font-weight: bold;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     /* border-radius: 25px 0px; */
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: var(--color-button);
 }
 
 /* Listas */
@@ -246,6 +250,7 @@ footer {
     bottom: 0;
     width: 100%;
     border-top: 2px solid #0c667f;
+    height: 50px; /* Altura fija para el footer */
 }
 
 footer strong {
