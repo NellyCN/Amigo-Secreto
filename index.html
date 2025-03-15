@@ -16,7 +16,7 @@
         
         <header class="header-banner">
             <h1 class="main-title">Amigo Secreto</h1>
-            <img src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
+            <img class="img-title" src="assets/amigo-secreto.png" alt="Imagen representativa de amigo secreto">
         </header>
         
         <section class="input-section">
@@ -24,8 +24,8 @@
             <div class="input-wrapper">
                 <input type="text" id="amigo" class="input-name" placeholder="Ingresa el nombre de un amigo">
                 <button class="button-add" onclick="addFriend()">Añadir</button>
-                <div id="error" style="display: none; color: red;"></div>
-            </div>           
+            </div>     
+            <div id="error"></div>      
             <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
             <ul id="resultado" class="result-list" aria-live="polite"></ul>
 
@@ -44,4 +44,7 @@
 
     <script src="app.js" defer></script>
 </body>
+<footer>
+    <p>Desarrollado por <strong>Nelly Cumpa. </strong> Te invito a visitar <a href="https://github.com/NellyCN/Amigo-Secreto" class="footer-link">Mi GitHub</a></p>
+</footer>
 </html>
