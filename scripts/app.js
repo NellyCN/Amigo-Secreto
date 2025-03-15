@@ -44,6 +44,7 @@ function updateButtons() {
 // 1. Agregar amigos
 
 function addFriend() {
+  clickSound.play(); // Reproducir sonido de clic
   let input = document.getElementById("amigo"); // Capturar el input
   let friend = input.value.trim(); // Obtener el valor y eliminar espacios extra
 
@@ -68,7 +69,7 @@ function addFriend() {
   input.value = ""; // Limpiar el campo de entrada
   showList();       // Actualizar la lista de amigos
   updateButtons();  // Actualizar el estado de los botones
-  clickSound.play(); // Reproducir sonido de clic
+  
 }
 
 // Validación en tiempo real
