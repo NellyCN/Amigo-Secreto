@@ -67,7 +67,7 @@ La **Amigo Secreto App** fue desarrollada con las siguientes tecnologías:
   - Efectos de sonido personalizados (aplausos y clics).
 
 ---
-## **4. Instalación 🚀 **
+## **4. Instalación 🚀**
 
 Sigue estos pasos para instalar y ejecutar la **Amigo Secreto App** en tu entorno local:
 
@@ -108,7 +108,7 @@ AMIGO-SECRETO/
 └── README.md # Este archivo
 ```
 ---
-### **- Características del Proyecto ✨ **
+### **- Características del Proyecto ✨**
 - **Interfaz intuitiva:** Fácil de usar para cualquier persona.
 - **Diseño responsive:** Funciona en dispositivos móviles y de escritorio.
 - **Validación de nombres:** Solo permite letras y espacios.
