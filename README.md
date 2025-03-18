@@ -4,6 +4,11 @@
 Esta herramienta te permite organizar un sorteo entre amigos de manera fácil y divertida. Puedes agregar nombres, sortear y reiniciar la lista cuando lo necesites. ¡Y lo mejor de todo es que funciona perfectamente en dispositivos móviles! 📱
 
 ---
+## **Demo**
+
+Puedes probar la aplicación en línea aquí: [Amigo Secreto App](https://nellycn.github.io/Amigo-Secreto/)
+
+---
 
 ## **Tabla de Contenidos**
 1. [Introducción](#introducción)
@@ -155,7 +160,15 @@ AMIGO-SECRETO/
 ## **8. Capturas de Pantalla**
 
 ### **- Vista de Escritorio**
-![Captura de pantalla en escritorio](images/desktop-screenshot.png)
+![Captura de pantalla en escritorio](./assets/desktop/1.pantalla_pc.png)
+![Captura de pantalla en escritorio](./assets/desktop/2.add_button_active.png)
+![Captura de pantalla en escritorio](./assets/desktop/3.name_added.png)
+![Captura de pantalla en escritorio](./assets/desktop/4.button_disabled.png)
+![Captura de pantalla en escritorio](./assets/desktop/5.friends_shown.png)
+![Captura de pantalla en escritorio](./assets/desktop/6.delete_friend.png)
+![Captura de pantalla en escritorio](./assets/desktop/7.button_delete_active.png)
+![Captura de pantalla en escritorio](./assets/desktop/8.button_restart_active.png)
+![Captura de pantalla en escritorio](./assets/desktop/9.list_cleaned.png)
 
 ### **- Vista Móvil**
 ![Captura de pantalla en móvil](images/mobile-screenshot.png)

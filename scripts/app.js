@@ -35,10 +35,10 @@ function isNameValid(name) {
 
 function updateButtons() {
   const sortearBtn = document.getElementById("sortearBtn");
-  const reiniciarBtn = document.getElementById("reiniciarBtn");
+  const limpiarBtn = document.getElementById("limpiarBtn");
 
   sortearBtn.disabled = friends.length < 2;
-  reiniciarBtn.disabled = friends.length === 0;
+  limpiarBtn.disabled = friends.length === 0;
 }
 
 // 1. Agregar amigos
@@ -164,7 +164,8 @@ function clearList() {
   setTimeout(() => {
     friends = []; // Limpiar el array de amigos
     document.getElementById("resultado").innerText = ""; // Limpiar resultado del sorteo
-    showList(); // Actualizar lista de amigos
+    showList(); // Actualizar 
+    // lista de amigos
     lista.classList.remove("fade-out"); // Eliminar animación después de limpiar
     showError("La lista se ha limpiado correctamente."); // Mensaje de confirmación
 
