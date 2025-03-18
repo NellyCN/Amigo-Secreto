@@ -2,8 +2,8 @@
 
 let friends = []; // Array para almacenar los nombres de los amigos
 
-const winSound = new Audio("sounds/applause.mp3");
-const clickSound = new Audio("sounds/mouse-click.mp3");
+const winSound = new Audio("./sounds/applause.mp3");
+const clickSound = new Audio("./sounds/mouse-click.mp3");
 
 // Función para mostrar mensajes de error
 
