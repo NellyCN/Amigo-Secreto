@@ -1,260 +1,514 @@
 :root {
-    --color-primary: #089bc4;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: hsl(46, 94%, 52%);
-    --color-button: #fe652b;
-    --color-button-hover: #d14914;
-    --color-text: #121111;
-    --color-white: #FFFFFF;
+  --color-primary: #089bc4;
+  --color-secondary: #fff9eb;
+  --color-tertiary: hsl(46, 94%, 52%);
+  --color-button: #fe652b;
+  --color-button-hover: #d14914;
+  --color-text: #121111;
+  --color-white: #ffffff;
+  --radius-large: 1.5625rem;
+  --shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+  --transition: all 0.3s ease;
 }
 
 /* Estilos generales */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Tamaño de fuente base */
 }
 
 body {
-    height: 100vh;
-    background-color: var(--color-primary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
+  height: 100vh;
+  background-color: var(--color-primary);
+  display: flex;
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* margin: 0;
+  padding: 0; */
+  line-height: 1.5;
+  /* font-family: "Inter", sans-serif; */
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Ocupa el espacio disponible */
-    height: 100%;
-    width: 100%;
-    padding-bottom: 0px; /* Espacio para el footer */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  height: 100%;
+  width: 100%;
+  padding-bottom: calc(5rem + 3.75rem); /* Añadiendo altura aproximada del contenedor fijo */
 }
 
 /* Banner */
 .header-banner {
-    flex: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Sección de entrada */
 .input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 0.1875rem solid #0c667f;      /* 3px -> 0.1875rem */
-    border-radius: 4rem 4rem 0 0;           /* 64px -> 4rem */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding:  1.875rem 1.25rem 0;           /* 30px 20px 0 -> 1.875rem 1.25rem 0 */
-    width: 100%;
+  flex: 100%;
+  background-color: var(--color-secondary);
+  border: 0.168rem solid #0c667f; /* 3px -> 0.1875rem */
+  border-radius: 4rem 4rem 0 0; /* 64px -> 4rem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.875rem 1.25rem 0; /* 30px 20px 0 -> 1.875rem 1.25rem 0 */
+  width: 100%;
+  height: 200px;
 }
 
 /* Títulos */
 .main-title {
-    font-size: 4.25rem;                        /* 48px -> 3rem */
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-    color: var(--color-white);
-    padding-left: 2.5rem;                   /* 40px -> 2.5rem */
+  font-size: 3.5rem; /* 68px -> 4.25rem */
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--color-white);
+  padding-left: 2.5rem; /* 40px -> 2.5rem */
 }
 
-
 .img-title {
-    width: 22.20rem;                        /* 380px -> 23.75rem */
+  width: 18rem; /* 380px -> 23.75rem */
+  margin: 0.25rem; /* 4px -> 0.25rem */
 }
 
 .section-title {
-    font-family: "Inter", serif;
-    font-size: 2rem;                        /* 32px -> 2rem */
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 0.625rem;                       /* 10px -> 0.625rem */
-    text-align: center;
+  font-family: "Inter", serif;
+  font-size: 1.5rem; /* 32px -> 2rem */
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0.35rem; /* 10px -> 0.625rem */
+  text-align: center;
 }
 
 /* Contenedores de entrada y botón */
 .input-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    max-width: 37.5rem;                     /* 600px -> 37.5rem */
-    margin: 1.25rem;                        /* 20px -> 1.25rem */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 35rem; /* 600px -> 37.5rem */
+  margin: 0.5rem 0.75rem 0; /* 20px -> 1.25rem */
 }
 
 .input-name {
-    width: 70%;
-    padding: 0.9375rem 1.5625rem;           /* 15px 25px -> 0.9375rem 1.5625rem */
-    border: 0.125rem solid #000;          /* 2px -> 0.125rem */
-    border-radius: 1.5625rem;               /* 25px -> 1.5625rem */
-    font-size: 1.125rem;                    /* 18px -> 1.125rem */
-    margin-right: 1.125rem;                /* 18px -> 1.125rem */
+  width: 70%;
+  height: 85%;
+  padding: 0.675rem 1rem; /* 15px 25px -> 0.9375rem 1.5625rem */
+  border: 0.12rem solid #000; /* 2px -> 0.125rem */
+  border-radius: 1.25rem; /* 25px -> 1.5625rem */
+  font-size: 1.05rem; /* 18px -> 1.125rem */
+  margin-right: 1rem; /* 18px -> 1.125rem */
+
 }
 
 #error {
-    color: red;
-    font-size: 1.375rem;                    /* 22px -> 1.375rem */
-    margin-top: 0.9375rem;                 /* 15px -> 0.9375rem */
-    display: flex;
-    justify-content: center;
+  color: red;
+  font-size: 1.375rem; /* 22px -> 1.375rem */
+  margin-top: 0.85rem; /* 15px -> 0.9375rem */
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
+/* Estilos para el contenedor de botones fijos */
 .button-container {
-    width: 25rem;                           /* 400px -> 25rem */
-    display: flex;
-    justify-content: space-between;
+  width: 100%; /* 400px -> 25rem */
+  position: fixed;
+  bottom: 2.225rem; /*Ajusta este valor según la altura del footer */
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem; /* Espacio entre los botones */
+  background-color: var(--color-secondary);
+  padding: 0 0.5rem 0.5rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  z-index: 1000; /* Asegura que los botones estén por encima de otros elementos */
+}
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem; /* 10px -> 0.625rem */
 }
 
 /* Estilos de botón */
 button {
-    padding: 0.9375rem 1.875rem;            /* 15px 30px -> 0.9375rem 1.875rem */
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;                        /* 16px -> 1rem */
-    border: 0.125rem solid #000;          /* 2px -> 0.125rem */
-    border-radius: 1.5625rem;               /* 25px -> 1.5625rem */
-    cursor: pointer;
-    transition: opacity 0.3s ease, transform 0.2s ease;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem; /* 16px -> 1rem */
+  border: 0.125rem solid #000; /* 2px -> 0.125rem */
+  border-radius: var(--radius-large); /* 25px -> 1.5625rem */
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
 }
 
 button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-white);
-    font-weight: bold;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* 4px 8px -> 0.25rem 0.5rem */
+  background-color: var(--color-tertiary);
+  color: var(--color-white);
+  font-weight: bold;
+  padding:  0.75rem 1.65rem; /* 15px 30px -> 0.9375rem 1.875rem */
+  height: auto;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* 4px 8px -> 0.25rem 0.5rem */
 }
 
 .button-add:hover {
-    background-color: var(--color-button);
+  background-color: var(--color-button);
 }
 
 /* Listas */
-ul {
-    list-style-type: none;
+.name-list {
+  display: grid; 
+  margin: 0.5rem 0 0.5rem 0; /* 10px -> 0.625rem */
+  padding: 0.5rem 0 0 0; /* 10px -> 0.625rem */
+  list-style-type: none;
+  font-family: "Inter", sans-serif;
+  grid-template-columns: repeat(4, minmax(12rem, 1fr));
+  gap: 0.5rem;            /* Espacio entre elementos */
+  justify-content: center;
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.name-list li {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 11.25rem; /* 180px → 11.25rem */
+    padding: 0.35rem 0.75rem; /* 8px 12px → 0.5rem 0.75rem */
+    border: 0.0625rem solid #ccc; /* 1px → 0.0625rem */
+    border-radius: 0.3125rem; /* 5px → 0.3125rem */
+    background-color: #f8f8f8;
+    white-space: nowrap; /* Evita que los nombres salten de línea */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
     color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 1.125rem;                        /* 18px -> 1.125rem */
-    margin: 1.25rem 0;                          /* 20px -> 1.25rem */
+    font-size: 12px;
+    height: 27px;
 }
 
 .result-list {
-    margin-top: 0.9375rem;                      /* 15px -> 0.9375rem */
-    color: #05DF05;
-    font-size: 1.375rem;                        /* 22px -> 1.375rem */
-    font-weight: bold;
-    text-align: center;
+  margin-top: 0.25rem; /* 15px -> 0.9375rem */
+  color: #05df05;
+  font-size: 1.35rem; /* 22px -> 1.375rem */
+  font-weight: bold;
+  text-align: center;
+  list-style: none;
 }
 
 /* Botón de sortear amigo */
 .button-draw {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 0.625rem 0.9375rem;            /* 10px 15px -> 0.625rem 0.9375rem */
-    margin: 0.625rem;                       /* 10px -> 0.625rem */
-    color: var(--color-white);
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* 4px 8px -> 0.25rem 0.5rem */
-    background-color: var(--color-button);
-    font-size: 1rem;                        /* 16px -> 1rem */
-    gap: 0.5rem;                            /* 8px -> 0.5rem */
+  display: flex;
+  align-items: center;
+  /* width: 10rem; 48px -> 3rem */
+  padding: 0.5rem 0.75rem; /* 10px 15px -> 0.625rem 0.9375rem */
+  margin: 0.5rem; /* 10px -> 0.625rem */
+  color: var(--color-white);
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.3); /* 4px 8px -> 0.25rem 0.5rem */
+  background-color: var(--color-button);
+  font-size: 0.95rem; /* 16px -> 1rem */
+  gap: 0.75rem; /* 8px -> 0.5rem Espacio entre el ícono y el texto*/
 }
 
 .button-draw:hover {
-    background-color: var(--color-button-hover);
+  background-color: var(--color-button-hover);
 }
 
 .deleteBtn {
-    background-color: transparent;
-    border: none;
-    color: #ff4d4d;
-    cursor: pointer;
-    font-size: 0.75rem;                     /* 12px -> 0.75rem */
-    margin-left: 0.625rem;                  /* 10px -> 0.625rem */
-    transition: color 0.3s ease;
+  background-color: transparent;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  font-size: 0.675rem; /* 12px -> 0.75rem */
+  margin-left: 0.25rem; /* 10px -> 0.625rem */
+  transition: color 0.3s ease;
+  padding: 0rem 0.75rem;
+  height: 1rem;
 }
 
 .deleteBtn:hover {
-    color: #f7d5d5;
+  color: #f7d5d5;
 }
 
 .deleteBtn:active {
-    background-color: #cc0000;
-    border-color: #cc0000;
-}
-
-#listaAmigos li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: right;
-    padding: 0.625rem;                          /* 10px -> 0.625rem */
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  background-color: #cc0000;
+  border-color: #cc0000;
 }
 
 .fade-out {
-    opacity: 0;
-    transform: translateX(-100%);
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 .button-reset {
-    display: flex; /* Para alinear el ícono y el texto */
-    align-items: center; /* Centrar verticalmente */
-    padding: 0.625rem 0.9375rem;            /* 10px 15px -> 0.625rem 0.9375rem */
-    margin: 0.625rem;                       /* 10px -> 0.625rem */
-    background-color: #4CAF50;            /* Verde */
-    color: var(--color-white);              /* Texto blanco */
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* 4px 8px -> 0.25rem 0.5rem */
-    border: 0.125rem solid #000;          /* 2px -> 0.125rem */
-    border-radius: 1.5625rem;               /* 25px -> 1.5625rem Bordes redondeados*/
-    cursor: pointer;                        /* Cambiar el cursor a una mano */
-    font-size: 1rem;                        /* 16px -> 1rem Tamaño de fuente*/
-    gap: 0.5rem;                            /* 8px -> 0.5rem Espacio entre el ícono y el texto*/
+  display: flex; /* Para alinear el ícono y el texto */
+  align-items: center; /* Para alinear el ícono y el texto */
+  padding: 0.5rem 0.75rem; /* 10px 15px -> 0.625rem 0.9375rem */
+  margin: 0.5rem; /* 10px -> 0.625rem */
+  background-color: #4caf50; /* Verde */
+  color: var(--color-white); /* Texto blanco */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* 4px 8px -> 0.25rem 0.5rem */
+  gap: 0.75rem; /* 8px -> 0.5rem Espacio entre el ícono y el texto*/
 }
 
 .button-reset:hover {
-    background-color: #36933b; /* Verde más oscuro al pasar el mouse */
+  background-color: #36933b; /* Verde más oscuro al pasar el mouse */
 }
 
 .button-reset:active {
-    background-color: #1c5a1e; /* Verde aún más oscuro al hacer clic */
+  background-color: #1c5a1e; /* Verde aún más oscuro al hacer clic */
 }
 
 .button-reset i {
-    font-size: 1.125rem;                        /* 18px -> 1.125rem */
+  font-size: 1.35rem; /* 18px -> 1.125rem */
 }
 
 /* Estilos para el footer */
 footer {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    text-align: center;
-    padding: 0.9375rem 0;                       /* 15px -> 0.9375rem */
-    font-family: "Inter", sans-serif;
-    font-size: 0.875rem;                        /* 14px -> 0.875rem */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 0.125rem solid #0c667f;         /* 2px -> 0.125rem */
-    height: 3.125rem;                           /* 50px -> 3.125rem Altura fija para el footer */
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-align: center;
+  padding: 0.5rem 0; /* 15px -> 0.9375rem */
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem; /* 14px -> 0.875rem */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 0.125rem solid #0c667f; /* 2px -> 0.125rem */
+  height: auto; /* 50px -> 3.125rem Altura fija para el footer */
+  z-index: 999; /* Asegura que el footer esté por debajo de los botones */
 }
 
 footer strong {
-    color: var(--color-tertiary);
+  color: var(--color-tertiary);
 }
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  body {
+    /* padding: 10px; */
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .input-container input,
+  .input-container button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* #participants li {
+    font-size: 1rem;
+  } */
+
+  #result {
+    font-size: 1.2rem;
+  }
+}
+
+/* Media query para pantallas medianas (tablets) */
+@media (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  /* #participants li {
+    font-size: 1.2rem;
+  } */
+
+  #result {
+    font-size: 1.4rem;
+  }
+}
+
+/* Mobile: <=480px*/
+@media (max-width: 480px) {
+  .input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0rem 2rem 1rem;
+    justify-content: space-around;
+  }
+
+  .input-name {
+    width: 70%;
+    margin-right: 0;
+    font-size: 0.88rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+    padding-left: 2.5rem;
+  }
+
+  .img-title {
+    width: 12rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  button {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  #listaAmigos li {
+    padding: 0.35rem;
+    font-size: small;
+  }
+
+  .deleteBtn {
+    font-size: 0.6rem;
+    margin-left: 0.45rem;
+    padding: 0.35rem;
+  }
+
+  .button-draw {
+    width: 9rem;
+    font-size: 0.875rem;
+  }
+
+  .button-reset {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .result-list {
+    font-size: 1.2rem;
+  }
+
+  #error {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-title {
+    font-size: 3.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .img-title {
+    width: 18rem;
+  }
+
+  .input-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-name {
+    width: 85%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .button-draw {
+    width: 9rem;
+  }
+}
+
+/* Desktop Grande: >=1200px */
+/* @media (min-width: 1200px) {
+  .main-title {
+    font-size: 8rem;
+  }
+
+  .img-title {
+    width: 25rem;
+  }
+
+  .input-wrapper {
+    max-width: 50rem;
+  }
+
+  .section-title {
+    font-size: 5rem;
+  }
+
+  .input-name {
+    width: 100%;
+    font-size: 3.5rem;
+    padding: 2rem 2rem;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    font-size: 3.2rem;
+  }
+
+  .button-draw {
+    width: 30rem;
+    font-size: 3rem;
+    padding: 3rem 3rem;
+  }
+
+  .button-reset {
+    width: 30rem;
+    font-size: 3rem;
+    padding: 3rem 3rem;
+  }
+
+  img {
+    width: 5rem;
+  }
+
+  .fas-fa-redo {
+    width: 3rem;
+  } */
+
+  /* #participants li {
+    font-size: 3rem;
+  } */
+
+  /* #listaAmigos li {
+    padding: 0.35rem;
+    font-size: 3rem;
+  }
+
+  .deleteBtn {
+    font-size: 3rem;
+    margin-left: 2rem;
+    padding: 1.25rem;
+  }
+
+  .result-list {
+    font-size: 4rem;
+  }
+
+  #error {
+    font-size: 4rem;
+  }
+} */

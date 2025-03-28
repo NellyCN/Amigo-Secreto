@@ -130,7 +130,7 @@ function showList() {
 function drawnFriend() {
   if (friends.length < 2) {
     // Verificar que haya amigos en la lista
-    showError("Agrega al menos dos amigo antes de sortear."); // Mostrar un mensaje de alerta
+    showError("Agrega al menos dos amigos antes de sortear."); // Mostrar un mensaje de alerta
     return; // Salir de la función
   }
 
