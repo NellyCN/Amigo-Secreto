@@ -26,13 +26,7 @@ body {
   height: 100vh;
   background-color: var(--color-primary);
   display: flex;
-  /* flex-direction: row; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* margin: 0;
-  padding: 0; */
   line-height: 1.5;
-  /* font-family: "Inter", sans-serif; */
 }
 
 .main-content {
@@ -41,7 +35,9 @@ body {
   flex-grow: 1; /* Ocupa el espacio disponible */
   height: 100%;
   width: 100%;
-  padding-bottom: calc(5rem + 3.75rem); /* Añadiendo altura aproximada del contenedor fijo */
+  padding-bottom: calc(
+    5rem + 3.75rem
+  ); /* Añadiendo altura aproximada del contenedor fijo */
 }
 
 /* Banner */
@@ -50,20 +46,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* Sección de entrada */
-.input-section {
-  flex: 100%;
-  background-color: var(--color-secondary);
-  border: 0.168rem solid #0c667f; /* 3px -> 0.1875rem */
-  border-radius: 4rem 4rem 0 0; /* 64px -> 4rem */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.875rem 1.25rem 0; /* 30px 20px 0 -> 1.875rem 1.25rem 0 */
-  width: 100%;
-  height: 200px;
 }
 
 /* Títulos */
@@ -90,6 +72,20 @@ body {
   text-align: center;
 }
 
+/* Sección de entrada */
+.input-section {
+  flex: 100%;
+  background-color: var(--color-secondary);
+  border: 0.168rem solid #0c667f; /* 3px -> 0.1875rem */
+  border-radius: 4rem 4rem 0 0; /* 64px -> 4rem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.875rem 1.25rem 0; /* 30px 20px 0 -> 1.875rem 1.25rem 0 */
+  width: 100%;
+  height: 200px;
+}
+
 /* Contenedores de entrada y botón */
 .input-wrapper {
   display: flex;
@@ -109,7 +105,6 @@ body {
   border-radius: 1.25rem; /* 25px -> 1.5625rem */
   font-size: 1.05rem; /* 18px -> 1.125rem */
   margin-right: 1rem; /* 18px -> 1.125rem */
-
 }
 
 #error {
@@ -140,7 +135,7 @@ body {
 .botones {
   display: flex;
   justify-content: center;
-  gap: 0.75rem; /* 10px -> 0.625rem */
+  gap: 0.75rem;
 }
 
 /* Estilos de botón */
@@ -167,7 +162,7 @@ button:disabled {
   background-color: var(--color-tertiary);
   color: var(--color-white);
   font-weight: bold;
-  padding:  0.75rem 1.65rem; /* 15px 30px -> 0.9375rem 1.875rem */
+  padding: 0.75rem 1.65rem; /* 15px 30px -> 0.9375rem 1.875rem */
   height: auto;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3); /* 4px 8px -> 0.25rem 0.5rem */
 }
@@ -178,49 +173,46 @@ button:disabled {
 
 /* Listas */
 .name-list {
-  display: grid; 
-  margin: 0.5rem 0 0.5rem 0; /* 10px -> 0.625rem */
+  display: grid;
+  margin: 1rem 0 0.5rem 0; /* 10px -> 0.625rem */
   padding: 0.5rem 0 0 0; /* 10px -> 0.625rem */
   list-style-type: none;
   font-family: "Inter", sans-serif;
   grid-template-columns: repeat(4, minmax(12rem, 1fr));
-  gap: 0.5rem;            /* Espacio entre elementos */
+  gap: initial; /* Espacio entre elementos */
   justify-content: center;
-  max-height: 380px;
-  overflow-y: auto;
+  max-height: 420px;
+  overflow-y: auto; /* Agrega scroll si el contenido excede la altura */
 }
 
 .name-list li {
-    display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
-    width: 11.25rem; /* 180px → 11.25rem */
-    padding: 0.35rem 0.75rem; /* 8px 12px → 0.5rem 0.75rem */
-    border: 0.0625rem solid #ccc; /* 1px → 0.0625rem */
-    border-radius: 0.3125rem; /* 5px → 0.3125rem */
-    background-color: #f8f8f8;
-    white-space: nowrap; /* Evita que los nombres salten de línea */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
-    color: var(--color-text);
-    font-size: 12px;
-    height: 27px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 11.25rem; /* 180px → 11.25rem */
+  padding: 0.35rem 0.75rem; /* 8px 12px → 0.5rem 0.75rem */
+  border: none; /* 1px → 0.0625rem */
+  border-radius: 0.3125rem; /* 5px → 0.3125rem */
+  background-color: var(--color-secondary);
+  white-space: nowrap; /* Evita que los nombres salten de línea */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
+  color: var(--color-text);
+  font-size: 1rem;
 }
 
 .result-list {
-  margin-top: 0.25rem; /* 15px -> 0.9375rem */
+  margin-top: 0.5rem; /* 15px -> 0.9375rem */
   color: #05df05;
   font-size: 1.35rem; /* 22px -> 1.375rem */
   font-weight: bold;
   text-align: center;
-  list-style: none;
 }
 
 /* Botón de sortear amigo */
 .button-draw {
   display: flex;
   align-items: center;
-  /* width: 10rem; 48px -> 3rem */
   padding: 0.5rem 0.75rem; /* 10px 15px -> 0.625rem 0.9375rem */
   margin: 0.5rem; /* 10px -> 0.625rem */
   color: var(--color-white);
@@ -242,8 +234,7 @@ button:disabled {
   font-size: 0.675rem; /* 12px -> 0.75rem */
   margin-left: 0.25rem; /* 10px -> 0.625rem */
   transition: color 0.3s ease;
-  padding: 0rem 0.75rem;
-  height: 1rem;
+  padding: 0.25rem 0.75rem;
 }
 
 .deleteBtn:hover {
@@ -303,212 +294,151 @@ footer strong {
   color: var(--color-tertiary);
 }
 
-/* Media query para pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
-  body {
-    /* padding: 10px; */
-  }
+@media (max-width: 1024px) {
+  /* Ajustes para tablets */
 
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  .input-container input,
-  .input-container button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  /* #participants li {
-    font-size: 1rem;
-  } */
-
-  #result {
-    font-size: 1.2rem;
-  }
-}
-
-/* Media query para pantallas medianas (tablets) */
-@media (max-width: 900px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  /* #participants li {
-    font-size: 1.2rem;
-  } */
-
-  #result {
-    font-size: 1.4rem;
-  }
-}
-
-/* Mobile: <=480px*/
-@media (max-width: 480px) {
-  .input-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0rem 2rem 1rem;
-    justify-content: space-around;
-  }
-
-  .input-name {
-    width: 70%;
-    margin-right: 0;
-    font-size: 0.88rem;
-    padding: 0.65rem 1rem;
-  }
-
+  /* Títulos */
   .main-title {
-    font-size: 2.5rem;
-    padding-left: 2.5rem;
+    font-size: 4.25rem;
+    margin-left: 3.5rem;
   }
 
   .img-title {
-    width: 12rem;
+    width: 23rem;
+    margin-right: 0.25rem; /* 4px -> 0.25rem */
   }
 
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0.5rem;
+    padding: 0.45rem;
   }
 
-  button {
-    padding: 0.625rem 1rem;
-    font-size: 0.875rem;
-  }
-
-  #listaAmigos li {
-    padding: 0.35rem;
-    font-size: small;
-  }
-
-  .deleteBtn {
-    font-size: 0.6rem;
-    margin-left: 0.45rem;
-    padding: 0.35rem;
-  }
-
-  .button-draw {
-    width: 9rem;
-    font-size: 0.875rem;
-  }
-
-  .button-reset {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
-  }
-
-  .result-list {
-    font-size: 1.2rem;
-  }
-
-  #error {
-    font-size: 1rem;
-  }
-}
-
-/* Tablet: 481px - 768px */
-@media (min-width: 481px) and (max-width: 768px) {
-  .main-title {
-    font-size: 3.25rem;
-    padding-left: 1.5rem;
-  }
-
-  .img-title {
-    width: 18rem;
-  }
-
-  .input-wrapper {
-    flex-direction: column;
-    align-items: center;
+  .input-section {
+    padding: 1.5rem 1rem; /* Ajusta el padding para pantallas pequeñas */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
   }
 
   .input-name {
-    width: 85%;
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-
-  button {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .button-draw {
-    width: 9rem;
-  }
-}
-
-/* Desktop Grande: >=1200px */
-/* @media (min-width: 1200px) {
-  .main-title {
-    font-size: 8rem;
-  }
-
-  .img-title {
-    width: 25rem;
+    width: 50%;
+    height: 100%;
+    padding: 0.675rem 1rem;
+    font-size: 1.05rem;
   }
 
   .input-wrapper {
-    max-width: 50rem;
+    flex-direction: row; /* Cambia a columna en pantallas pequeñas */
+    justify-content: space-evenly; /* Espacio uniforme entre los elementos */
+    align-items: center; /* Alinea los elementos para que ocupen todo el ancho */
+    width: 100%; /* Ajusta el ancho del contenedor de entrada */
+    max-width: 100%; /* Permite que el contenedor ocupe todo el ancho disponible */
+    margin: 0.5rem;
+  }
+
+  .name-list {
+    grid-template-columns: repeat(
+      2,
+      minmax(12rem, 1fr)
+    ); /* Dos columnas en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ajustes para móviles */
+
+  /* Títulos */
+  .main-title {
+    font-size: 2.25rem; /* 68px -> 4.25rem */
+    margin-left: 0.15rem; /* 40px -> 2.5rem */
+  }
+
+  .img-title {
+    width: 10rem;
+    margin-right: 0.25rem; /* 4px -> 0.25rem */
   }
 
   .section-title {
-    font-size: 5rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0.5rem 0.35rem;
+    padding: 0.15rem;
+  }
+
+  .input-section {
+    padding: 0.5rem; /* Ajusta el padding para pantallas pequeñas */
+    height: auto; /* Permite que la altura se ajuste automáticamente */
   }
 
   .input-name {
-    width: 100%;
-    font-size: 3.5rem;
-    padding: 2rem 2rem;
+    width: 55%;
+    height: 95%;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem; /* 15px 25px -> 0.9375rem 1.5625rem */
+    font-size: 0.85rem;
   }
 
+  .input-wrapper {
+    margin: 0.65rem;
+  }
+
+  .name-list {
+    grid-template-columns: repeat(1, minmax(12rem, 1fr)); /* Una columna en pantallas pequeñas */
+    margin: 0.5rem; /* 10px -> 0.625rem */
+    padding: 0.5rem; /* 10px -> 0.625rem */
+    max-height: 720px;
+    overflow-y: auto; /* Agrega scroll si el contenido excede la altura */
+  }
+
+  /* Estilos de botón */
   button {
-    padding: 1rem 2rem;
-    font-size: 3.2rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.65rem;
+  }
+
+  .button-add {
+    padding: 0.55rem 1.5rem;
+    height: auto;
+  }
+
+  .name-list li {
+    font-size: 0.75rem;
   }
 
   .button-draw {
-    width: 30rem;
-    font-size: 3rem;
-    padding: 3rem 3rem;
+    width: 50%;
+    padding: 0.5rem 0.65rem;
+    box-shadow: 0 0.15rem 0.25rem rgba(0, 0, 0, 0.3); 
+    font-size: 0.65rem;
+    gap: 0.5rem;
   }
 
-  .button-reset {
-    width: 30rem;
-    font-size: 3rem;
-    padding: 3rem 3rem;
-  }
-
-  img {
-    width: 5rem;
-  }
-
-  .fas-fa-redo {
-    width: 3rem;
-  } */
-
-  /* #participants li {
-    font-size: 3rem;
-  } */
-
-  /* #listaAmigos li {
-    padding: 0.35rem;
-    font-size: 3rem;
+  .img-draw {
+    width: 1.25rem; /* 20px -> 1.25rem */
+    height: 1.25rem; /* 20px -> 1.25rem */
   }
 
   .deleteBtn {
-    font-size: 3rem;
-    margin-left: 2rem;
-    padding: 1.25rem;
+    font-size: 0.55rem;
+  }
+
+  .button-reset {
+    font-size: 0.65rem;
+    padding: 0.5rem 0.65rem;
+    box-shadow: 0 0.15rem 0.25rem rgba(0, 0, 0, 0.3);
+    gap: 0.45rem;
+  }
+
+  .button-reset i {
+    font-size: 1rem;
   }
 
   .result-list {
-    font-size: 4rem;
+    font-size: 1.15rem;
   }
 
   #error {
-    font-size: 4rem;
+    font-size: 1rem; /* 22px -> 1.375rem */
+    margin-top: 0.5rem; /* 15px -> 0.9375rem */
+
   }
-} */
+}

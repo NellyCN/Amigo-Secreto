@@ -172,6 +172,8 @@ function clearList() {
     // Habilitar "Sortear" y deshabilitar "Reiniciar" después de limpiar
     document.getElementById("sortearBtn").disabled = false;
     document.getElementById("limpiarBtn").disabled = true;
+    // Volver a enfocar el input después del reinicio
+    document.getElementById("amigo").focus();
   }, 300); // Tiempo de espera para la animación = 300(ms)
 }
 
@@ -181,3 +183,8 @@ document.getElementById("limpiarBtn").addEventListener("click", clearList);
 
 // Actualizar el estado de los botones al cargar la página
 document.addEventListener("DOMContentLoaded", updateButtons);
+
+// Coloca el cursor en el input al cargar la página
+window.onload = () => {
+  document.getElementById("amigo").focus();
+};
